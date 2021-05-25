@@ -31,7 +31,9 @@ export class UsersRepository implements IUsersRepository {
     }
 
     async findAllUsersOrderedByFirstName(): Promise<User[]> {
-        return this.repository.query("select * from users order by first_name"); // Complete usando raw query
+        return this.repository.query(
+            "select * from users order by first_name asc"
+        ); // Complete usando raw query
     }
 
     async findUserByFullName({
